@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all ShopEase products with search, filters and sorting.">
+  <title>Shop all products | ShopEase</title>
+  <link rel="icon" href="assets/placeholder.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("shopease_theme") || "light");</script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1 class="page-title" id="page-heading">All products</h1>
+
+    <div class="shop-layout">
+      <!-- Filter sidebar -->
+      <aside class="filters" id="filters" aria-label="Filters">
+        <h3>Filters</h3>
+
+        <div class="form-group">
+          <label for="f-search">Search</label>
+          <input type="search" id="f-search" placeholder="Phone, shirt, lamp…">
+        </div>
+
+        <div class="form-group">
+          <label for="f-category">Category</label>
+          <select id="f-category">
+            <option value="">All categories</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Price (₹)</label>
+          <div class="price-inputs">
+            <input type="number" id="f-min" placeholder="Min" min="0" aria-label="Minimum price">
+            <input type="number" id="f-max" placeholder="Max" min="0" aria-label="Maximum price">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-rating">Customer rating</label>
+          <select id="f-rating">
+            <option value="">Any rating</option>
+            <option value="4">4★ and above</option>
+            <option value="3">3★ and above</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="radio-option">
+            <input type="checkbox" id="f-stock"> In stock only
+          </label>
+        </div>
+
+        <button class="btn btn-outline btn-block" id="clear-filters" type="button">Clear all filters</button>
+      </aside>
+
+      <!-- Results -->
+      <section aria-label="Products">
+        <div class="shop-toolbar">
+          <button class="btn btn-outline btn-sm filter-toggle" id="filter-toggle" type="button" aria-controls="filters" aria-expanded="false">⚙️ Filters</button>
+          <span class="muted" id="result-count" aria-live="polite">Loading…</span>
+          <label for="f-sort" class="sr-only">Sort by</label>
+          <select id="f-sort">
+            <option value="">Sort: Featured</option>
+            <option value="price-asc">Price: Low to high</option>
+            <option value="price-desc">Price: High to low</option>
+            <option value="rating">Customer rating</option>
+            <option value="discount">Biggest discount</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+        <nav class="pagination" id="pagination" aria-label="Pages"></nav>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="js/products.js"></script>
+</body>
+</html>

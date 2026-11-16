@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | ShopEase</title>
+  <link rel="icon" href="assets/placeholder.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("shopease_theme") || "light");</script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div id="checkout-view">
+      <h1 class="page-title">Checkout</h1>
+
+      <div class="checkout-layout">
+        <form class="panel" id="checkout-form" novalidate>
+          <h3>Delivery address</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Priya Sharma">
+              <div class="error-msg" id="name-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile number</label>
+              <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="9876543210">
+              <div class="error-msg" id="phone-error"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="priya@example.com">
+            <div class="error-msg" id="email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address (house no., street, area)</label>
+            <textarea id="address" name="address" rows="2" autocomplete="street-address" placeholder="Flat 12B, Green Park Main Road"></textarea>
+            <div class="error-msg" id="address-error"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input id="city" name="city" autocomplete="address-level2" placeholder="New Delhi">
+              <div class="error-msg" id="city-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="pincode">PIN code</label>
+              <input id="pincode" name="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code" placeholder="110016">
+              <div class="error-msg" id="pincode-error"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state">
+              <option value="">Select state</option>
+              <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+              <option>Chhattisgarh</option><option>Delhi</option><option>Goa</option>
+              <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+              <option>Jammu and Kashmir</option><option>Jharkhand</option><option>Karnataka</option>
+              <option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option>
+              <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+              <option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option>
+              <option>Uttarakhand</option><option>West Bengal</option>
+            </select>
+            <div class="error-msg" id="state-error"></div>
+          </div>
+
+          <h3 style="margin-top:8px">Payment method</h3>
+          <div class="radio-group" role="radiogroup" aria-label="Payment method">
+            <label class="radio-option"><input type="radio" name="payment" value="Cash on delivery" checked> 💵 Cash on delivery</label>
+            <label class="radio-option"><input type="radio" name="payment" value="UPI"> 📱 UPI (demo)</label>
+            <label class="radio-option"><input type="radio" name="payment" value="Card"> 💳 Credit / debit card (demo)</label>
+          </div>
+          <p class="demo-note">This is a demo store. No real payment is taken.</p>
+
+          <button type="submit" class="btn btn-primary btn-block" id="place-order" style="margin-top:16px">Place order</button>
+        </form>
+
+        <aside class="panel summary" id="order-summary" aria-label="Order summary"></aside>
+      </div>
+    </div>
+
+    <!-- Shown after the order is placed -->
+    <section id="success-view" class="panel success-box" hidden aria-live="polite"></section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>

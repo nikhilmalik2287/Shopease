@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in | ShopEase</title>
+  <link rel="icon" href="assets/placeholder.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("shopease_theme") || "light");</script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <!-- Shown to logged-out users -->
+    <section class="auth-wrap" id="auth-view" hidden>
+      <div class="panel">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" id="tab-login" class="active" aria-selected="true" aria-controls="login-form">Log in</button>
+          <button type="button" role="tab" id="tab-signup" aria-selected="false" aria-controls="signup-form">Sign up</button>
+        </div>
+
+        <form id="login-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            <div class="error-msg" id="login-email-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Your password">
+            <div class="error-msg" id="login-password-error"></div>
+          </div>
+          <div class="error-msg" id="login-error" role="alert"></div>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          <button type="button" class="btn btn-outline btn-block" id="demo-login" style="margin-top:8px">Use demo account</button>
+        </form>
+
+        <form id="signup-form" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+          <div class="form-group">
+            <label for="signup-name">Full name</label>
+            <input id="signup-name" name="name" autocomplete="name" placeholder="Priya Sharma">
+            <div class="error-msg" id="signup-name-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            <div class="error-msg" id="signup-email-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" name="password" type="password" autocomplete="new-password" placeholder="At least 6 characters, with a number">
+            <div class="error-msg" id="signup-password-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm">Confirm password</label>
+            <input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Type it again">
+            <div class="error-msg" id="signup-confirm-error"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+
+        <p class="demo-note">Demo login: accounts are stored only in this browser's localStorage. A real store would use a secure backend.</p>
+      </div>
+    </section>
+
+    <!-- Shown to logged-in users -->
+    <section id="account-view" hidden>
+      <div class="panel" style="margin-top:28px">
+        <div class="account-head">
+          <div style="display:flex;gap:16px;align-items:center">
+            <div class="avatar" id="avatar"></div>
+            <div>
+              <h1 style="margin:0" id="account-name"></h1>
+              <span class="muted" id="account-email"></span>
+            </div>
+          </div>
+          <button class="btn btn-outline" id="logout-btn">Log out</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px" id="orders">
+        <h2>My orders</h2>
+        <div id="orders-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

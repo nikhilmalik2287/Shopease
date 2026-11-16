@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopEase — shop electronics, fashion, beauty and home essentials at great prices.">
+  <title>ShopEase | Online Shopping</title>
+  <link rel="icon" href="assets/placeholder.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Apply saved theme before the page paints (avoids a white flash in dark mode) -->
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("shopease_theme") || "light");</script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <!-- Hero banner -->
+    <section class="hero">
+      <div>
+        <span class="hero-tag">Festive sale is live</span>
+        <h1>Everything you love, delivered fast.</h1>
+        <p>Shop phones, laptops, fashion, beauty and home essentials. Use code <strong>SAVE10</strong> for 10% off your first order.</p>
+        <div class="hero-actions">
+          <a href="products.html" class="btn btn-primary">Shop now</a>
+          <a href="products.html?sort=discount" class="btn btn-outline">View deals</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">🛍️</div>
+    </section>
+
+    <!-- Store benefits -->
+    <section class="perks" aria-label="Why shop with us">
+      <div class="perk"><span class="perk-icon" aria-hidden="true">🚚</span><div><strong>Free delivery</strong><span>On orders above ₹999</span></div></div>
+      <div class="perk"><span class="perk-icon" aria-hidden="true">↩️</span><div><strong>Easy returns</strong><span>7-day return policy</span></div></div>
+      <div class="perk"><span class="perk-icon" aria-hidden="true">🔒</span><div><strong>Secure checkout</strong><span>Your data stays safe</span></div></div>
+      <div class="perk"><span class="perk-icon" aria-hidden="true">💬</span><div><strong>24/7 support</strong><span>We're here to help</span></div></div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Shop by category</h2>
+        <a href="products.html">See all</a>
+      </div>
+      <div class="category-chips" id="category-chips">
+        <span class="muted">Loading categories…</span>
+      </div>
+    </section>
+
+    <!-- Top rated -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Top rated</h2>
+        <a href="products.html?sort=rating">See all</a>
+      </div>
+      <div class="product-grid" id="trending-grid"></div>
+    </section>
+
+    <!-- Best deals -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Biggest discounts</h2>
+        <a href="products.html?sort=discount">See all</a>
+      </div>
+      <div class="product-grid" id="deals-grid"></div>
+    </section>
+
+    <!-- Recently viewed (only shown if the user has viewed products) -->
+    <section class="section" id="recent-section" hidden>
+      <div class="section-head"><h2>Recently viewed</h2></div>
+      <div class="product-grid" id="recent-grid"></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>
